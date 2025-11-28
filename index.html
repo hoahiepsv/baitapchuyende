@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RA BÀI TẬP THEO CHUYÊN ĐỀ</title>
+    <!-- Critical: Force Standards Mode for KaTeX if the environment defaults to Quirks -->
+    <script>
+      try {
+        if (document.compatMode === 'BackCompat') {
+          Object.defineProperty(document, 'compatMode', {
+            value: 'CSS1Compat',
+            writable: true,
+            configurable: true
+          });
+          console.log("Patched compatMode for KaTeX");
+        }
+      } catch (e) {
+        console.warn("CompatMode patch failed", e);
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Pyodide for Python execution -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+    <!-- KaTeX for Math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <!-- KaTeX Auto-render extension -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "docx": "https://aistudiocdn.com/docx@^9.5.1",
+    "file-saver": "https://aistudiocdn.com/file-saver@^2.0.5",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+  <style>
+    /* Ensure the preview area looks like a printed document */
+    .latex-preview-content {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.15rem; /* ~18px for clear reading */
+      line-height: 1.6;
+    }
+    /* Increase math size slightly for readability */
+    .katex {
+      font-size: 1.1em !important;
+    }
+  </style>
+</head>
+  <body class="bg-slate-50 text-slate-900 font-sans">
+    <div id="root"></div>
+  </body>
+</html>
